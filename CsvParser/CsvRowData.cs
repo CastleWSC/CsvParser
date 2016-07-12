@@ -34,11 +34,11 @@ namespace CsvParser
 
             for (int i=0; i<tags.Length; i++)
             {
-                _datas.Add(tags[i], new CsvObject(fields[i]));
+                _datas.Add(tags[i], new CsvObject(fields[i].Trim()));
             }
         }
 
-        public CsvObject GetData(string tag)
+        public CsvObject GetField(string tag)
         {
             CsvObject ret = null;
             _datas.TryGetValue(tag.ToUpper(), out ret);
